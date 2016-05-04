@@ -1,0 +1,75 @@
+---
+layout: post
+title: "关于JavaLock的一些思考"
+date: 2015-01-23 0:54:00 +0800
+categoryies: jekyll update
+---
+
+### 关于Java锁的一些思考
+
+首先java中大家通常的同步方式为`synchronized`。进一步，大家会对[Lock Interface](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/Lock.html)有所关注。再进一步，大家会了解一些各种Lock的性能差异。
+
+那么，我希望能够简单的描述下面两个问题
+
+1. Lock的模型是什么？
+2. synchronized关键字与Lock的使用场景有何不同？
+3. OS级的线程模型？
+
+#### Lock的模型
+
+首先简单的分析一下Lock下的几个实现
+
+1. ReentrantLock
+    * 没有获取到锁的Object,会阻塞
+    * 通过`public ReentrantLock(boolean fair)`可以处理`fairness`情况  
+    `When set true, under contention, locks favor granting access to the longest-waiting thread. Otherwise this lock does not guarantee any particular access order.`
+    * [允许current thread重入](http://tutorials.jenkov.com/java-concurrency/locks.html#reentrance)
+
+2. ReentrantReadWriteLock  
+    本质上讲，ReadWriteLock为`读者－写者问题`其相应的描述为:
+    * 读者优先：即读者不会因为有一个写者在等待而等待
+    * 写者优先：当一个写者到达后，读者必须等待
+    
+以上是Java Lock下的几个实现，那么Lock的模型是什么样子的呢？一个经典的答案为`信号量`。更具体的可以参考[CSAP](http://book.douban.com/subject/1230413/)中的描述。
+
+
+Dijkstra大大提出的Semaphore(信号量)的定义，
+
+* P(s):如果s是非零的，那么P将s减1，并且立即返回。如果s为零，那么就挂起这个线程，直到s变为非零，而一个`V操作会重启这个线程`。在重启之后，P操作将s减少1，并将控制权返给调用者。
+* V(s):V操作将s加1。如果有任何线程阻塞在P操作等待s变成非零，那么`V操作会重启这些线程中的一个，然后该线程将s减一`，完成它的P操作。
+
+**_重点1_:当有多个线程在等待同一个信号量时，你不能预测V操作要重启哪一个线程**
+**_重点2_:P、V操作为原子操作**
+
+同时，根据操作原语，可以得到在互斥条件下的进度图  
+![进度图](http://cinaoblog-typechoupload.stor.sinaapp.com/IMG_0905.JPG)
+
+ISSUE1: 引发的思考为，RenntrantLock中的fair是如何做到的呢？
+
+
+#### synchronized关键字与Lock的使用场景差异
+
+1. synchronized由Java语言支持，利用Java Object自身的Monitor来实现不能传递
+2. 某些场景下需要由A上锁，B解锁的情况，这个时候使用Lock会更灵活。
+
+
+#### OS线程模型是这个样子的（todo ing）
+
+
+每个线程拥有自己的`线程上下文`，如`线程ID`、`栈`、`栈指针`、`程序计数器`、`条件代码`和`通用目的寄存器的值`。
+
+线程之间会共享`进程上下文`的其他部分，如`用户虚拟地址空间`。
+
+用户虚拟地址空间由：`代码`、`读/写数据`、`堆`、`共享代码`和`数据区域`。
+
+##### 将变量映射到存储器
+
+* 全局变量：定义在函数之外的变量
+* 本地自动变量：定义在函数内部但没有static属性的变量
+* 本地静态变量：定义在函数内部并具有static属性的变量
+
+##### 共享变量的含义
+
+当前仅当它的一个实例被一个以上的线程引用。
+
+
