@@ -24,9 +24,6 @@ categoryies: jekyll update
 * 韩非 (法)
 
 
-[<春秋战国思想史话>](https://book.douban.com/subject/25857061/)
-内联方式：This is an [example link](http://example.com/).
-
 #### 学说的背景&局限
 
 > 大背景, 周朝对诸侯的掌控力逐渐变弱。新兴的地主阶级和旧贵族的矛盾日益加重。
@@ -79,3 +76,4 @@ categoryies: jekyll update
 #### 后记
 
 * https://www.wanmen.org/courses/586d23485f07127674135d44
+* [《春秋战国思想史话》](https://book.douban.com/subject/25857061/)

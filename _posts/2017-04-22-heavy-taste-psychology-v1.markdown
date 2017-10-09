@@ -5,7 +5,7 @@ date: 2017-04-22 19:38:00 +0800
 categoryies: jekyll update
 ---
 
-####[<重口味心理学>](https://book.douban.com/subject/10736800/)读后感(第一遍)
+####[《重口味心理学》](https://book.douban.com/subject/10736800/)读后感(第一遍)
 
 >
 书中分了若干章，结合案例讲解了一些生活中心理的常见现象。
