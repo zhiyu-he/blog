@@ -24,3 +24,10 @@ categoryies: jekyll update
 
 2. 行列式
     * 二阶与三阶行列式
+    * n阶行列式
+        * n阶行列式, 项数为n!
+        * n阶行列式, N(a1, a2, ...an)决定每项前面的正负
+        * n阶行列式的表示 |aij|
+        * 1阶行列式, |a11|=a11
+        * n阶行列式, n!, 正负各一半, n >= 2
+        * n阶行列式, 是数, D, det(determinant)
