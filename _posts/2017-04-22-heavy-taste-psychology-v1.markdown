@@ -2,7 +2,7 @@
 layout: post
 title: "<重口味心理学>读后感(第一遍)"
 date: 2017-04-22 19:38:00 +0800
-categoryies: jekyll update
+categories: [读书]
 ---
 
 ####[《重口味心理学》](https://book.douban.com/subject/10736800/)读后感(第一遍)

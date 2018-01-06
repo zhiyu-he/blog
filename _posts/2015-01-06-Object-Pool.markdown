@@ -2,7 +2,7 @@
 layout: post
 title: "Object Pool引子"
 date: 2015-01-06 01:04:00 +0800
-categoryies: jekyll update
+categoryies: [common]
 ---
 
 ### Object Pool 引子？

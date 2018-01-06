@@ -2,7 +2,7 @@
 layout: post
 title: "51nod 算法马拉松#3 滚粗记录"
 date: 2015-07-05 23:40:00 +0800
-categoryies: jekyll update
+categories: [算法]
 ---
 
 记录下吧，一共大约100多人参加，我得了5分，也就90多名吧。

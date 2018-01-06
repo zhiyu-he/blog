@@ -2,7 +2,7 @@
 layout: post
 title: "记一次SQL优化的历程"
 date: 2015-08-06 11:37:00 +0800
-categoryies: jekyll update
+categories: [优化, 设计]
 ---
 
 ### 记一次SQL优化的历程

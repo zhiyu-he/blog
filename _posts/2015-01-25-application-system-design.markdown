@@ -2,7 +2,7 @@
 layout: post
 title: "应用系统设计上的一些事"
 date: 2015-01-25 0:15:00 +0800
-categoryies: jekyll update
+categories: [思考]
 ---
 
 <!--markdown-->### 应用系统设计上的一些事

@@ -2,7 +2,7 @@
 layout: post
 title: "关于Java线程池的一些理解"
 date: 2015-01-23 0:55:00 +0800
-categoryies: jekyll update
+categories: [Java, Thread-Pool]
 ---
 
 ### 关于Java线程池的一些理解

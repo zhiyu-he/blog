@@ -2,7 +2,7 @@
 layout: post
 title: "关于web项目的层次结构的思考"
 date: 2015-04-08 23:19:00 +0800
-categoryies: jekyll update
+categories: [思考]
 ---
 
 在传统的MVC模型下，会对项目进行分层，层次结构为`controller-service-dao`。但随着项目的复杂，该结构会有所演进。

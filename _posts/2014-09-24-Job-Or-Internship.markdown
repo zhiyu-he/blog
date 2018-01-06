@@ -2,7 +2,7 @@
 layout: post
 title: "求职? or 实习?"
 date: 2015-01-06 00:16:00 +0800
-categoryies: jekyll update
+categories: [思考]
 ---
 
 ### 求职？工作?

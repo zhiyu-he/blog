@@ -2,7 +2,7 @@
 layout: post
 title: "Demo Of Paoding-Rose"
 date: 2014-11-07 01:38:00 +0800
-categoryies: jekyll update
+categories: [rpc-framework]
 ---
 
 ### paoding-rose 环境构建

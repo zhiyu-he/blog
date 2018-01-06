@@ -2,7 +2,7 @@
 layout: post
 title: "<春秋战国思想史话>读后感"
 date: 2017-10-04 23:41:00 +0800
-categoryies: jekyll update
+categories: [读书]
 ---
 
 >

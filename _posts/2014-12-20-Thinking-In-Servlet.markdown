@@ -2,7 +2,7 @@
 layout: post
 title: "Thinking In Servlet Part One"
 date: 2014-12-20 23:51:00 +0800
-categoryies: jekyll update
+categories: [Java, servlet]
 ---
 
 ### Thinking in Servlet（一）

@@ -2,7 +2,7 @@
 layout: post
 title:  "一个简单的商品分类系统的设计与实现"
 date:   2015-08-06 21:04:30 +0800
-categories: jekyll update
+categories: [设计]
 ---
 
 ### 一个简单商品分类系统的设计与实现
